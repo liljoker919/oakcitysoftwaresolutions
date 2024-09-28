@@ -1,0 +1,169 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #4B4B4B;
+  background-color: #FFFFFF;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Header Section */
+header {
+  background-color: #34849c;
+  color: #FFFFFF;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+/* About Section */
+#about {
+  padding: 50px 0;
+  background-color: #64a0a0;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+#about p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #FFFFFF;
+}
+
+/* Services Section */
+#services {
+  padding: 50px 0;
+  text-align: center;
+}
+
+#services h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #34849c;
+}
+
+#services ul {
+  list-style: none;
+  padding: 0;
+}
+
+#services ul li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Portfolio Section */
+#portfolio {
+  padding: 50px 0;
+  background-color: #64a0a0;
+  text-align: center;
+}
+
+#portfolio h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+#portfolio p {
+  color: #FFFFFF;
+}
+
+/* Contact Section */
+#contact {
+  padding: 50px 0;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #34849c;
+}
+
+#contact form {
+  margin: 0 auto;
+  width: 50%;
+  text-align: left;
+}
+
+#contact label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #4B4B4B;
+  border-radius: 5px;
+}
+
+#contact button {
+  background-color: #fcbc2c;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#contact button:hover {
+  background-color: #d9a025;
+}
+
+/* Footer Section */
+footer {
+  background-color: #34849c;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 10px 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Custom Styles to Override Bootstrap */
+.bg-primary {
+  background-color: #34849c !important;
+}
+
+.text-primary {
+  color: #34849c !important;
+}
+
+.bg-secondary {
+  background-color: #64a0a0 !important;
+}
+
+.btn-warning {
+  background-color: #fcbc2c !important;
+  border-color: #fcbc2c !important;
+}
+
+.btn-warning:hover {
+  background-color: #d9a025 !important;
+  border-color: #d9a025 !important;
+}
