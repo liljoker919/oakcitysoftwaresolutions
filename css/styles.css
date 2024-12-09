@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   color: #4B4B4B;
@@ -21,11 +21,13 @@ header {
 }
 
 header h1 {
-  margin: 0;
+  font-family: 'Open Sans', sans-serif;
   font-size: 36px;
+  margin: 0;
 }
 
 header p {
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
 }
 
@@ -37,12 +39,14 @@ header p {
 }
 
 #about h2 {
+  font-family: 'Open Sans', sans-serif;
   font-size: 30px;
   margin-bottom: 20px;
   color: #FFFFFF;
 }
 
 #about p {
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   line-height: 1.6;
   color: #FFFFFF;
@@ -55,6 +59,7 @@ header p {
 }
 
 #services h2 {
+  font-family: 'Open Sans', sans-serif;
   font-size: 30px;
   margin-bottom: 20px;
   color: #34849c;
@@ -66,6 +71,7 @@ header p {
 }
 
 #services ul li {
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   margin-bottom: 10px;
 }
@@ -78,12 +84,14 @@ header p {
 }
 
 #portfolio h2 {
+  font-family: 'Open Sans', sans-serif;
   font-size: 30px;
   margin-bottom: 20px;
   color: #FFFFFF;
 }
 
 #portfolio p {
+  font-family: 'Roboto', sans-serif;
   color: #FFFFFF;
 }
 
@@ -94,6 +102,7 @@ header p {
 }
 
 #contact h2 {
+  font-family: 'Open Sans', sans-serif;
   font-size: 30px;
   margin-bottom: 20px;
   color: #34849c;
@@ -106,6 +115,7 @@ header p {
 }
 
 #contact label {
+  font-family: 'Roboto', sans-serif;
   display: block;
   font-size: 16px;
   margin-bottom: 5px;
@@ -113,6 +123,7 @@ header p {
 
 #contact input,
 #contact textarea {
+  font-family: 'Roboto', sans-serif;
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -121,6 +132,7 @@ header p {
 }
 
 #contact button {
+  font-family: 'Roboto', sans-serif;
   background-color: #fcbc2c;
   color: #FFFFFF;
   padding: 10px 20px;
@@ -142,6 +154,7 @@ footer {
 }
 
 footer p {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
 }
 
