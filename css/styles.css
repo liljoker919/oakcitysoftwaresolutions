@@ -5,6 +5,7 @@ body {
   padding: 0;
   color: #4B4B4B;
   background-color: #FFFFFF;
+  /* White background */
 }
 
 .container {
@@ -13,6 +14,8 @@ body {
 }
 
 /* Header Section */
+
+
 header {
   background-color: #34849c;
   color: #FFFFFF;
@@ -33,36 +36,74 @@ header p {
 
 /* Hero Section */
 .hero {
-  height: 100vh;
+  height: 50vh;
+  /* 50% of the viewport height */
   background-image: url('../img/pexels-luis-gomes-166706-546819.jpg');
+  /* Background image */
   background-size: cover;
+  /* Ensure the image covers the entire container */
   background-position: center;
+  /* Center the background image */
+  background-repeat: no-repeat;
+  /* Prevent image repetition */
   display: flex;
+  /* Flexbox for centering content */
   align-items: center;
+  /* Vertical centering */
   justify-content: center;
+  /* Horizontal centering */
   text-align: center;
+  /* Center-align text */
   color: #ffffff;
+  /* White text color for contrast */
+  position: relative;
+  /* Enable content overlay positioning */
 }
 
+/* Content Overlay for Better Readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  /* Dark overlay with 40% opacity */
+  z-index: 1;
+}
+
+/* Hero Content */
 .hero-content {
-  background: rgba(0, 0, 0, 0.5);
-  /* Semi-transparent overlay */
-  padding: 20px;
-  border-radius: 10px;
+  position: relative;
+  /* Place content above the overlay */
+  z-index: 2;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.2);
+  /* Subtle transparency for extra contrast */
+  border-radius: 8px;
   max-width: 600px;
+  /* Prevent content overflow */
 }
 
+/* Hero Headline */
 .hero h1 {
   font-family: 'Open Sans', sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 10px;
+  line-height: 1.2;
+  /* Improve readability */
 }
 
+/* Hero Subtext */
 .hero p {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.25rem;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  line-height: 1.5;
 }
+
+
 
 .btn-primary {
   background-color: #fcbc2c;
@@ -81,7 +122,8 @@ header p {
 /* About Section */
 #about {
   padding: 50px 0;
-  background-color: #64a0a0;
+  background-color: #FFFFFF;
+  /* Updated to white */
   text-align: center;
 }
 
@@ -89,14 +131,15 @@ header p {
   font-family: 'Open Sans', sans-serif;
   font-size: 30px;
   margin-bottom: 20px;
-  color: #FFFFFF;
+  color: #34849c;
+  /* Use branding color for headings */
 }
 
 #about p {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   line-height: 1.6;
-  color: #FFFFFF;
+  color: #4B4B4B;
 }
 
 /* Services Section */
@@ -123,10 +166,94 @@ header p {
   margin-bottom: 10px;
 }
 
+/* Blog Section */
+
+.blog {
+  padding: 50px 0;
+  background-color: #FFFFFF;
+  /* Updated to white */
+  text-align: center;
+}
+
+.blog h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  color: #34849c;
+  margin-bottom: 20px;
+}
+
+.blog p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #4B4B4B;
+}
+
+.blog-preview {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.blog-post {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.blog-post h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  color: #333333;
+}
+
+.blog-post p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+/* Blog Cards */
+.card {
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25rem;
+}
+
+.card-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #fcbc2c;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #d9a025;
+}
+
+
 /* Portfolio Section */
 #portfolio {
   padding: 50px 0;
-  background-color: #64a0a0;
+  background-color: #FFFFFF;
+  /* Updated to white */
   text-align: center;
 }
 
@@ -134,12 +261,12 @@ header p {
   font-family: 'Open Sans', sans-serif;
   font-size: 30px;
   margin-bottom: 20px;
-  color: #FFFFFF;
+  color: #34849c;
 }
 
 #portfolio p {
   font-family: 'Roboto', sans-serif;
-  color: #FFFFFF;
+  color: #4B4B4B;
 }
 
 /* Contact Section */
