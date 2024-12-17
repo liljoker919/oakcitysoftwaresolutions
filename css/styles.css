@@ -272,59 +272,57 @@ header p {
 /* Contact Section */
 #contact {
   padding: 50px 0;
+  background-color: #FFFFFF;
   text-align: center;
 }
 
 #contact h2 {
   font-family: 'Open Sans', sans-serif;
   font-size: 30px;
-  margin-bottom: 20px;
   color: #34849c;
+  margin-bottom: 20px;
 }
 
 #contact form {
+  max-width: 600px;
   margin: 0 auto;
-  width: 50%;
   text-align: left;
+}
+
+#contact .form-group {
+  margin-bottom: 20px;
 }
 
 #contact label {
   font-family: 'Roboto', sans-serif;
-  display: block;
   font-size: 16px;
   margin-bottom: 5px;
+  display: block;
 }
 
 #contact input,
-#contact textarea {
+#contact select {
   font-family: 'Roboto', sans-serif;
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #4B4B4B;
+  font-size: 14px;
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 #contact button {
-  font-family: 'Roboto', sans-serif;
   background-color: #fcbc2c;
   color: #FFFFFF;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
 }
 
 #contact button:hover {
   background-color: #d9a025;
-}
-
-/* Footer Section */
-footer {
-  background-color: #34849c;
-  color: #FFFFFF;
-  text-align: center;
-  padding: 10px 0;
 }
 
 footer p {

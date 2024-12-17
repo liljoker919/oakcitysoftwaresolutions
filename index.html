@@ -139,18 +139,35 @@
     <section id="contact">
       <div class="container">
         <h2>Contact Us</h2>
-        <form>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-          <label for="message">Project Description:</label>
-          <textarea id="message" name="message" required></textarea>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="businessName">Business Name:</label>
+            <input type="text" id="businessName" name="businessName" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="serviceRequired">Service Required:</label>
+            <select id="serviceRequired" name="serviceRequired" class="form-control" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="Custom Website Development">Custom Website Development</option>
+              <option value="Website Maintenance">Website Maintenance</option>
+              <option value="Hosting Services">Hosting Services</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <p>Email: info@oakcitysoftware.com | Phone: (123) 456-7890</p>
       </div>
     </section>
+
 
     <!-- Footer Section -->
     <footer>
@@ -158,6 +175,7 @@
         <p>&copy; 2024 Oak City Software Solutions</p>
       </div>
     </footer>
+    <script src="js/validation.js"></script>
 
 </body>
 
