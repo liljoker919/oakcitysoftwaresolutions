@@ -25,11 +25,28 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     }
 
     alert('Form is valid! Submitting...');
-    // Replace with backend API integration logic
-    sendToBackend({ name, email, businessName, serviceRequired });
+    sendToBackend({ name, email, businessName, serviceRequired }); // Call backend function
 });
 
-function sendToBackend(formData) {
-    console.log('Form Data:', formData);
-    // Placeholder for integration with AWS SES or backend server
+async function sendToBackend(formData) {
+    try {
+        const response = await fetch('https://174ar5gms9.execute-api.us-east-1.amazonaws.com/prod', { // Replace with your API Gateway endpoint
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+            alert('Your message has been sent successfully!');
+        } else {
+            console.error('Error:', result);
+            alert('Failed to send your message. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again later.');
+    }
 }
