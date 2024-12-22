@@ -66,13 +66,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 async function sendToBackend(formData) {
-    const apiEndpoint = "https://174ar5gms9.execute-api.us-east-1.amazonaws.com/prod"; // Replace with your API Gateway endpoint
+    try {
+        const response = await fetch('https://174ar5gms9.execute-api.us-east-1.amazonaws.com/prod', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
 
-    return await fetch(apiEndpoint, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-    });
+        // Handle non-JSON responses gracefully
+        let result;
+        try {
+            result = await response.json();
+        } catch (jsonError) {
+            console.error('Failed to parse JSON response:', jsonError);
+            throw new Error('Invalid server response');
+        }
+
+        if (response.ok) {
+            console.log('Response:', result);
+            alert('Your message has been sent successfully!');
+        } else {
+            console.error('Server returned an error:', response.status, response.statusText, result);
+            alert(`Failed to send your message: ${result.message || 'Unknown error occurred'}`);
+        }
+    } catch (error) {
+        console.error('Error occurred during submission:', error);
+        alert('An error occurred. Please try again later.');
+    }
 }
+
