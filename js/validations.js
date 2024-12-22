@@ -3,12 +3,6 @@ if (contactForm) {
     contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
         const submitButton = contactForm.querySelector('button[type="submit"]');
-        const loadingIndicator = document.getElementById('loadingIndicator');
-
-        //     // if (!loadingIndicator) {
-        //     //     console.error('Loading indicator element not found.');
-        //     //     return;
-        // }
 
         const name = document.getElementById('name').value.trim();
         const serviceRequired = document.getElementById('serviceRequired').value.trim();
@@ -34,15 +28,12 @@ if (contactForm) {
         //     return;
         // }
 
-        // submitButton.disabled = true;
-        // loadingIndicator.textContent = 'Submitting...';
-        // loadingIndicator.classList.add('visible');
+        submitButton.disabled = true;
         alert('Form is valid! Submitting...');
         await sendToBackend({ name, email, businessName, serviceRequired }); // Call backend function
 
-        // Reset form and loading indicator
+        // Reset form
         submitButton.disabled = false;
-        loadingIndicator.classList.remove('visible');
     });
 }
 
