@@ -12,8 +12,3 @@ class ContactSubmissionForm(forms.ModelForm):
             'service_required': forms.Select(attrs={'class': 'form-control'}),
         }
         
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        if not email or '@' not in email:
-            raise forms.ValidationError("Please enter a valid email address.")
-        return email
