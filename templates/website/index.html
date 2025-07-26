@@ -4,6 +4,17 @@
 {% block title %}Affordable Professional Websites for Small Businesses | Oak City Software Solutions{% endblock %}
 
 {% block content %}
+
+<!-- form alert -->
+{% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+{% endif %}
+
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="hero-content">
@@ -74,30 +85,10 @@
     <section id="contact">
       <div class="container">
         <h2>Contact Us</h2>
-        <form id="contactForm">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label for="businessName">Business Name:</label>
-            <input type="text" id="businessName" name="businessName" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="serviceRequired">Service Required:</label>
-            <select id="serviceRequired" name="serviceRequired" class="form-control" required>
-              <option value="" disabled selected>Select a service</option>
-              <option value="Custom Website Development">Custom Website Development</option>
-              <option value="Website Maintenance">Website Maintenance</option>
-              <option value="Hosting Services">Hosting Services</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+        <form id="contactForm" method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary w-50">Submit</button>
         </form>
       
       </div>
