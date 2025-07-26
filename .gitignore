@@ -1,2 +1,29 @@
-db.sqlite3 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.so
+
+# Environments
+.env
+venv/
+env/
+# virtualenv environments
+myvenv/
+
+# Database
+db.sqlite3
+/media
+/static
+
+# IDEs and other tools
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Logs and other temporary files
+*.log
+tmp/
 
