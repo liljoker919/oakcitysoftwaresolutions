@@ -1,0 +1,98 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+{% block title %}Affordable Professional Websites for Small Businesses | Oak City Software Solutions{% endblock %}
+
+{% block content %}
+
+<!-- form alert -->
+{% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+{% endif %}
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Affordable Web Development for Small Businesses in Raleigh NC</h1>
+      <p>Fast, secure, and affordable custom websites for small businesses. Boost your online presence with professional web solutions.</p>
+    </div>
+  </section>
+
+
+  <!-- About Section -->
+
+  <section id="about">
+    <section id="about">
+      <div class="container">
+        <h2>Building Online Presence for Local Businesses</h2>
+        <p>We specialize in affordable web development and custom websites for small businesses. Our static website solutions deliver the benefits of speed, security, and cost-effectiveness to help your business thrive online.</p>
+      </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
+        <h2>Affordable Web Development Services</h2>
+        <ul>
+          <li>Custom Website Development for Small Businesses</li>
+          <li>Affordable Static Websites for Local Service Providers</li>
+          <li>Fast and Secure Web Solutions with AWS Hosting</li>
+          <li>Website Maintenance and Updates for Small Business Websites</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+      <div class="container">
+        <h2>Web Development Insights for Small Businesses</h2>
+        <p>Expert tips and insights to help your small business maximize the benefits of professional websites and online presence.</p>
+        <div class="blog-preview">
+          <div class="blog-post">
+            <h3>5 Reasons Small Businesses Need a Professional Website</h3>
+
+            <p>A professional website helps you build trust, attract customers, and grow your brand with affordable web development solutions.</p>
+            <a href="blog.html" class="btn btn-primary">Read More</a>
+          </div>
+          <div class="blog-post">
+            <h3>Static Website Benefits for Your Local Business</h3>
+            <p>Discover why static websites are secure, fast, and perfect for small businesses seeking cost-effective web solutions.</p>
+            <a href="blog.html" class="btn btn-primary">Read More</a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+      <div class="container">
+        <h2>Small Business Website Portfolio</h2>
+        <p>Check out our custom websites for small businesses and see how affordable web development can transform your online presence!</p>
+        <!-- Placeholder for future project images or portfolio items -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contactForm" method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary w-50">Submit</button>
+        </form>
+      
+      </div>
+    </section>
+
+
+{% endblock content %}
