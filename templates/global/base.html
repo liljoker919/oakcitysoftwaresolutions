@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Oak City Software{% endblock %}</title>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Tags for SEO -->
+    <meta name="title" content="Insights and Tips for Small Businesses | Blog | Oak City Software Solutions">
+    <meta name="description"
+        content="Expert insights and tips for small businesses on affordable web development, online presence strategies, and custom website benefits. Oak City Software Solutions blog.">
+    <meta name="keywords"
+        content="small business blog, affordable web development tips, custom websites for small businesses, web solutions Raleigh NC, static website benefits, online presence for local businesses, professional website insights">
+    <meta name="author" content="Oak City Software Solutions">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Static CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+                
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7XXFCB69ZF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-7XXFCB69ZF');
+</script>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Oak City Software Solutions Logo - Affordable Web Development for Small Businesses" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Page Content -->
+    {% block content %}
+
+    {% endblock %}
+
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="container">
+        <p>Email: info@oakcitysoftware.com | Phone: (123) 456-7890</p>
+        <p>&copy; 2025 Oak City Software Solutions. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Static JS -->
+    <script src="{% static 'js/scrolling-nav.js' %}"></script>
+    <script src="{% static 'js/validation.js' %}"></script>
+
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha384-7R9AqXZ+0Zx1Kr7oE5a0NRTx1RYvReub8KdZ8r+QZG3xLZP+WhtZ+dCvR0TWy7kz"
+            crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-zDaPZQn6NUw9MeiCL6XAYn6CW1yYgdBklR7e6bJ+k7pEOPhf9Kw9VTV0xwQ6nWsl"
+            crossorigin="anonymous"></script>
+
+</body>
+</html>
