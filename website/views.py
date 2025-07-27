@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ContactSubmissionForm
+from .models import BlogPost
 from django.contrib import messages
 
 
@@ -20,6 +21,15 @@ def home_page(request):
     return render(request,'website/index.html',{'form': form})
 
 
-# Blog Page
+# Blog List Page
 def blog_page(request):
-    return render(request,'website/blog.html')
+    # Get all published blog posts ordered by published date
+    published_posts = BlogPost.objects.filter(status='published', published_date__isnull=False).order_by('-published_date')
+    return render(request, 'website/blog.html', {'posts': published_posts})
+
+
+# Blog Detail Page
+def blog_detail(request, slug):
+    # Get the specific published blog post
+    post = get_object_or_404(BlogPost, slug=slug, status='published', published_date__isnull=False)
+    return render(request, 'website/blog_detail.html', {'post': post})

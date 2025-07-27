@@ -1,0 +1,53 @@
+{% extends "global/base.html" %}
+{% load static %}
+
+{% block title %}
+{{ post.title }} | Blog | Oak City Software Solutions
+{% endblock title %}
+
+{% block meta_title %}
+<meta name="title" content="{{ post.title }} | Blog | Oak City Software Solutions">
+<meta name="description" content="{{ post.content|truncatewords:25|striptags }}">
+{% endblock meta_title %}
+
+{% block content %}
+    <!-- Blog Post Detail Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <article class="blog-post">
+                        <header class="mb-4">
+                            <h1 class="mb-3">{{ post.title }}</h1>
+                            <div class="text-muted mb-3">
+                                <small>
+                                    By <strong>{{ post.author.get_full_name|default:post.author.username }}</strong> 
+                                    on {{ post.published_date|date:"F d, Y" }}
+                                </small>
+                            </div>
+                        </header>
+                        
+                        <div class="blog-content">
+                            {{ post.content|linebreaks }}
+                        </div>
+                        
+                        <footer class="mt-5 pt-4 border-top">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="{% url 'blog' %}" class="btn btn-outline-primary">
+                                        ← Back to Blog
+                                    </a>
+                                </div>
+                                <div class="col-md-6 text-md-end">
+                                    <small class="text-muted">
+                                        Last updated: {{ post.updated_at|date:"F d, Y" }}
+                                    </small>
+                                </div>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
