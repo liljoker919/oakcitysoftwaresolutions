@@ -1,0 +1,100 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Contacts - Oak City Software{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>Contacts</h1>
+                <p class="text-muted">Total: {{ contacts|length }} contact{{ contacts|length|pluralize }}</p>
+            </div>
+
+            {% if contacts %}
+                <div class="row">
+                    {% for contact in contacts %}
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="{% url 'crm:contact_detail' contact.pk %}" class="text-decoration-none">
+                                            {{ contact.first_name }} {{ contact.last_name }}
+                                        </a>
+                                    </h5>
+                                    
+                                    {% if contact.email %}
+                                        <p class="card-text">
+                                            <i class="fas fa-envelope"></i> {{ contact.email }}
+                                        </p>
+                                    {% endif %}
+                                    
+                                    {% if contact.organization %}
+                                        <p class="card-text">
+                                            <i class="fas fa-building"></i> {{ contact.organization }}
+                                        </p>
+                                    {% endif %}
+                                    
+                                    {% if contact.title %}
+                                        <p class="card-text text-muted">
+                                            {{ contact.title }}
+                                        </p>
+                                    {% endif %}
+                                    
+                                    {% if contact.phone_number %}
+                                        <p class="card-text">
+                                            <i class="fas fa-phone"></i> {{ contact.phone_number }}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <small class="text-muted">Updated: {{ contact.updated_at|date:"M d, Y" }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                {% if is_paginated %}
+                    <nav aria-label="Contacts pagination">
+                        <ul class="pagination justify-content-center">
+                            {% if page_obj.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=1">&laquo; First</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                                </li>
+                            {% endif %}
+
+                            <li class="page-item active">
+                                <span class="page-link">
+                                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                </span>
+                            </li>
+
+                            {% if page_obj.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                {% endif %}
+            {% else %}
+                <div class="alert alert-info text-center" role="alert">
+                    <h4 class="alert-heading">No Contacts Found</h4>
+                    <p>There are currently no contacts in the system.</p>
+                    <p class="mb-0">You can add contacts through the Django admin interface.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Add FontAwesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
