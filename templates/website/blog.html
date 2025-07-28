@@ -28,48 +28,27 @@ content="small business blog, affordable web development tips, custom websites f
     <section id="blog" class="py-5">
         <div class="container">
             <div class="row">
-
-                <!-- Blog Post 1 -->
+                {% for post in posts %}
+                <!-- Blog Post {{ forloop.counter }} -->
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 shadow">
-                        <img src="img/blog-placeholder.jpg" class="card-img-top" alt="Professional website design for small businesses - 5 reasons why every business needs a website">
                         <div class="card-body">
-                            <h5 class="card-title">5 Reasons Small Businesses Need a Professional Website</h5>
-                            <p class="card-text">Learn why a professional website is essential for building trust,
-                                attracting customers, and growing your small business with affordable web development.</p>
-                            <a href="#" class="btn btn-primary">Read More</a>
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="card-text">{{ post.content|truncatewords:20 }}</p>
+                            <p class="text-muted"><small>By {{ post.author.get_full_name|default:post.author.username }} on {{ post.published_date|date:"F d, Y" }}</small></p>
+                            <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Read More</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Blog Post 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow">
-                        <img src="img/blog-placeholder.jpg" class="card-img-top" alt="Static website benefits for local businesses - fast, secure, and affordable web solutions">
-                        <div class="card-body">
-                            <h5 class="card-title">Static Website Benefits for Your Local Business</h5>
-                            <p class="card-text">Discover how static websites deliver speed, security, and reliability
-
-                                for small businesses while providing cost-effective web solutions.</p>
-                            <a href="#" class="btn btn-primary">Read More</a>
-
-                        </div>
+                {% empty %}
+                <!-- No blog posts message -->
+                <div class="col-12">
+                    <div class="text-center">
+                        <h4>No blog posts available yet.</h4>
+                        <p class="text-muted">Check back soon for exciting articles!</p>
                     </div>
                 </div>
-
-                <!-- Blog Post 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow">
-                        <img src="img/blog-placeholder.jpg" class="card-img-top" alt="Step-by-step guide to launching your first small business website online">
-                        <div class="card-body">
-                            <h5 class="card-title">Simple Steps to Get Your First Small Business Website Online</h5>
-                            <p class="card-text">Step-by-step guidance to help small business owners launch their first
-                                affordable website and establish a strong online presence.</p>
-                            <a href="#" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
