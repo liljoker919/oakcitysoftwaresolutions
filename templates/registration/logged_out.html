@@ -1,0 +1,26 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Logged Out - Oak City Software{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Logged Out</h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-success" role="alert">
+                        You have been successfully logged out.
+                    </div>
+                    <div class="text-center">
+                        <a href="{% url 'login' %}" class="btn btn-primary">Login Again</a>
+                        <a href="{% url 'home' %}" class="btn btn-secondary">Go Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
