@@ -1,42 +1,26 @@
-db.sqlite3
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.pyc
-*.pyo
-*.log
+*.pyd
+*.so
+
+# Environments
 .env
-.env.*
-*.env
-*.sqlite3
-*.db
-.DS_Store
-*.swp
-*.swo
-.idea/
+venv/
+env/
+# virtualenv environments
+myvenv/ # If you use a specific name for your virtual environment
+
+# Database
+db.sqlite3
+
+# Media and Static files generated during development (if applicable)
+/media/
+/static/
+
+# IDEs and other tools
 .vscode/
-*.egg-info/
-dist/
-build/
-*.bak
-*.tmp
-node_modules/
-coverage/
-*.cover
-*.pid
-*.seed
-*.orig
-*.rej
-*.tar.gz
-*.zip
-*.tgz
-*.gz
-*.rar
-*.7z
-*.lock
-*.cache
-*.pkl
-*.mypy_cache/
-*.pytest_cache/
-htmlcov/
-*.coverage
-*.tox/
-*.ipynb_checkpoints/
+.idea/
+*.swp
+*~
+.DS_Store # Mac-specific hidden file
